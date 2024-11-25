@@ -7,13 +7,15 @@ range r;
 //int size;  //size of the range
 auto[start,size] = r;
 // Display free memory blocks
-void displayFreeList(const freelist& freel) {
-    std::cout << "Free Memory Blocks:\n";
-    for (const auto& block : freel) {
-        std::cout << "[" << block.first << ", " << block.second << "] ";
+void displayFreeList(freelist &freel) {
+    cout << "Free Memory Blocks:\n";
+    for (auto& block : freel) {
+        auto [start, size] = block;
+     cout <<"["<< start << ", " << size << "]";
     }
-    std::cout << "\n";
-}
+    cout<<endl;
+}   
+
 
 // Display allocated memory blocks
 void displayAllocatedList(const alloclist& aloc) {
